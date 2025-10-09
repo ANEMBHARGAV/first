@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Peer Review Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d40a5",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex h-screen">
+<aside class="w-64 bg-background-light dark:bg-background-dark border-r border-gray-200 dark:border-gray-800 flex flex-col">
+<div class="p-6">
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white">PeerCollHub</h1>
+<p class="text-sm text-gray-500 dark:text-gray-400">Student Portal</p>
+</div>
+<nav class="flex-1 px-4 py-2 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>My Work</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-primary text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">checklist</span>
+<span>Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Groups</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span>Resources</span>
+</a>
+</nav>
+<div class="p-4 border-t border-gray-200 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<img alt="User avatar" class="h-10 w-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfoao8zgJNhh4H0T-GdEutY_yyD8zzSDQDj18bG4lHHqul3w9nPmw4YkhwZWO632q9IUUu5fSkkzviT4qCDmsB7AbXDpNZsSPpCW_WvpzHHRTPL5s7ETTlGzPzjwwwKwa5Yn9l815rjZOSie21LUYh0TkjfT_kEjJloVugaaixE0arR3SUZIDnH0iFJcCENOoCn_g_XuEmI9vZuDt4uO0tkTMfEFV-hLV5KrQY7NWZZopHofyz8237UKgjxNGNGxDZ-wcq-wT_XrPM"/>
+<div>
+<p class="font-semibold text-gray-900 dark:text-white">Alex Johnson</p>
+<a class="text-sm text-primary hover:underline" href="#">View Profile</a>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h1 class="text-3xl font-bold text-gray-900 dark:text-white">Reviews</h1>
+<p class="text-gray-500 dark:text-gray-400 mt-1">Track the status of your peer reviews and access feedback.</p>
+</header>
+<section>
+<h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Pending Your Review (2)</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white dark:bg-gray-800/50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 relative">
+<div class="absolute top-4 right-4 h-3 w-3 rounded-full bg-red-500 animate-pulse"></div>
+<h3 class="font-semibold text-lg text-gray-900 dark:text-white">Project Beta Design Mockups</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Submitted by <span class="font-medium text-primary">Jane Doe</span></p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Due: October 28, 2023</p>
+<button class="mt-4 w-full bg-primary/10 dark:bg-primary/20 text-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors duration-300">
+                      Start Review
+                  </button>
+</div>
+<div class="bg-white dark:bg-gray-800/50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 relative">
+<div class="absolute top-4 right-4 h-3 w-3 rounded-full bg-red-500 animate-pulse"></div>
+<h3 class="font-semibold text-lg text-gray-900 dark:text-white">Thesis Chapter 1 Draft</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Submitted by <span class="font-medium text-primary">Mike Ross</span></p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Due: November 5, 2023</p>
+<button class="mt-4 w-full bg-primary/10 dark:bg-primary/20 text-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors duration-300">
+                      Start Review
+                  </button>
+</div>
+</div>
+</section>
+<section class="mt-10">
+<h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Submissions Reviewed</h2>
+<div class="bg-white dark:bg-gray-800/50 rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 dark:text-gray-300 uppercase bg-gray-50 dark:bg-gray-700/50">
+<tr>
+<th class="px-6 py-3" scope="col">Submission</th>
+<th class="px-6 py-3" scope="col">Reviewer</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3 text-center" scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white dark:bg-transparent border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">Project Alpha</th>
+<td class="px-6 py-4">Dr. Emily Carter</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+<span class="w-2 h-2 mr-1.5 bg-green-500 rounded-full"></span>
+                        Completed
+                      </span>
+</td>
+<td class="px-6 py-4 text-center">
+<button class="font-medium text-primary hover:underline flex items-center gap-1 mx-auto animate-bounce">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span>View Feedback</span>
+</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-transparent border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">Essay on Modern Literature</th>
+<td class="px-6 py-4">Dr. David Lee</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+<span class="w-2 h-2 mr-1.5 bg-yellow-500 rounded-full animate-spin-slow"></span>
+                        In Progress
+                      </span>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="font-medium text-gray-400 dark:text-gray-500">Unavailable</span>
+</td>
+</tr>
+<tr class="bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800">
+<th class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" scope="row">Lab Report 2</th>
+<td class="px-6 py-4">Dr. Sarah Chen</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+<span class="w-2 h-2 mr-1.5 bg-green-500 rounded-full"></span>
+                        Completed
+                      </span>
+</td>
+<td class="px-6 py-4 text-center">
+<button class="font-medium text-primary hover:underline flex items-center gap-1 mx-auto">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span>View Feedback</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+
+</body></html>

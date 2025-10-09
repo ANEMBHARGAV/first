@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Peer - New Assignment</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d40a5",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#101622] dark:text-background-light">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-background-light dark:bg-background-dark border-r border-background-light/10 dark:border-background-dark/10 flex flex-col p-4">
+<h1 class="text-2xl font-bold text-primary mb-8">PeerCollHub</h1>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary font-medium" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-medium">Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium">Groups</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="flex flex-col gap-4">
+<button class="w-full flex items-center justify-center gap-2 h-12 px-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+<span>New Assignment</span>
+</button>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium">Help and Docs</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h1 class="text-4xl font-bold">New Assignment</h1>
+<p class="text-background-dark/60 dark:text-background-light/60 mt-1">Create a new assignment for your students.</p>
+</header>
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl p-8 shadow-sm">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block text-sm font-medium mb-1" for="title">Assignment Title</label>
+<input class="w-full h-12 px-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition" id="title" placeholder="e.g., Final Project Proposal" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-medium mb-1" for="description">Description</label>
+<textarea class="w-full p-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition" id="description" placeholder="Provide a detailed description of the assignment" rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="course">Course</label>
+<select class="w-full h-12 px-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition appearance-none bg-no-repeat bg-right pr-8" id="course" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3e%3c/svg%3e');">
+<option>Select a course</option>
+<option>Introduction to Design</option>
+<option>Advanced Web Development</option>
+<option>UX/UI Principles</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="points">Points</label>
+<input class="w-full h-12 px-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition" id="points" placeholder="e.g., 100" type="number"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-sm font-medium mb-1" for="dueDate">Due Date</label>
+<input class="w-full h-12 px-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition" id="dueDate" type="date"/>
+</div>
+</div>
+<div class="border-t border-background-dark/10 dark:border-background-light/10 my-8"></div>
+<div>
+<h2 class="text-xl font-bold mb-4">Peer Review Settings</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium mb-1" for="reviewDueDate">Review Due Date</label>
+<input class="w-full h-12 px-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition" id="reviewDueDate" type="date"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="reviewsPerStudent">Reviews Per Student</label>
+<input class="w-full h-12 px-4 rounded-lg bg-background-light/50 dark:bg-background-dark/50 border border-background-dark/10 dark:border-background-light/10 focus:ring-2 focus:ring-primary focus:border-primary transition" id="reviewsPerStudent" placeholder="e.g., 3" type="number"/>
+</div>
+</div>
+</div>
+<div class="pt-6 flex justify-end gap-4">
+<button class="h-12 px-6 font-bold rounded-lg bg-background-light/80 dark:bg-background-dark/80 hover:bg-background-light/100 dark:hover:bg-background-dark/100 border border-background-dark/10 dark:border-background-light/10 transition-colors" type="button">
+                Save as Draft
+              </button>
+<button class="h-12 px-6 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2" type="submit">
+                Create Assignment
+                <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin ml-2 hidden"></div>
+</button>
+</div>
+</form>
+<div class="mt-8">
+<div class="w-full bg-background-light/50 dark:bg-background-dark/50 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 0%"></div>
+</div>
+<p class="text-sm text-center mt-2 text-background-dark/60 dark:text-background-light/60">Creating Assignment... 0%</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

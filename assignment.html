@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Student Portal</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d40a5",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-80 bg-background-light/50 dark:bg-background-dark/50 p-6 flex flex-col justify-between shrink-0">
+<div>
+<div class="flex items-center gap-4 mb-8">
+<div class="size-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">person</span>
+</div>
+<div>
+<h1 class="text-black dark:text-white font-bold text-lg">Pavan Kumar</h1>
+<p class="text-black/60 dark:text-white/60 text-sm">Student</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#">
+<span class="material-symbols-outlined">folder</span>
+<span class="font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium">Reviews</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-medium">Assignments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-medium">Notifications</span>
+</a>
+</nav>
+</div>
+<button class="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-lg text-black/80 dark:text-white/80 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Logout</span>
+</button>
+</aside>
+<main class="flex-1 p-8 overflow-y-auto">
+<header class="mb-10">
+<h1 class="text-4xl font-bold text-black dark:text-white tracking-tight">Student Dashboard</h1>
+</header>
+<section class="mb-10">
+<h2 class="text-2xl font-bold text-black dark:text-white mb-4">My Projects</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl overflow-hidden group transform hover:-translate-y-1 transition-transform duration-300 shadow-md hover:shadow-xl">
+<img alt="Group Study Project Image" class="w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXacDj74O6zmjFv7-9RiSoC6R9HqKE-DRUAX1tejnFDSnfOZmhBEeNjB14fByrdFhOcVsmNFJzLNtcWBOYQQSgp8VoIOksDJIA4PG6I1yMAXuBLoT40LUQXdKHwBV1NRYSeS8z24EhobOJMEtQfgtsHOcqzzwgxjvT1m_BbaVEAo0u1x1mo6CVlzAU9qHqvfhnUsp2HgsDI7dwZuHsmZya2TV_2X7LSu97IAdYH_o29-kAP2M8L_s1ujeH8sn2DzaScESSGL5wYa4n"/>
+<div class="p-4">
+<h3 class="font-bold text-lg text-black dark:text-white">Project: Group Study</h3>
+<p class="text-sm text-black/60 dark:text-white/60">Due: May 15, 2024</p>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 rounded-xl overflow-hidden group transform hover:-translate-y-1 transition-transform duration-300 shadow-md hover:shadow-xl">
+<img alt="Research Paper Project Image" class="w-full h-40 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEEKxWK0-rY6_eQCXDp9e5rhVCZ6eS-D0UVwwY9L0V71rd0UHb4VEXA9gfCSCVx2jkqqCOAk4w7GdG0W8Z0rf68dR0QpV9Dd4U-i9to_kfua2rDOY5aXaczJQV_M5HII-GcyKwai39Hje7OwTkwATXJ6B5BmWdK0fp03uzfhS_eZKh1SupQNTbPm6vHt6PUFddue6HK8rDmeggDxwMppOghIDHFAc86d9O66OcGFkbXqoRm58ZGau6ekC_zJ5egD82BarTbOHIle44"/>
+<div class="p-4">
+<h3 class="font-bold text-lg text-black dark:text-white">Project: Research Paper</h3>
+<p class="text-sm text-black/60 dark:text-white/60">Due: June 10, 2024</p>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<section class="mb-10">
+<h2 class="text-2xl font-bold text-black dark:text-white mb-4">Upcoming Deadlines</h2>
+<div class="space-y-4">
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg flex items-center justify-between hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<div>
+<h3 class="font-medium text-black dark:text-white">Project: Group Study</h3>
+<p class="text-sm text-black/60 dark:text-white/60">Due: May 15, 2024</p>
+</div>
+<span class="material-symbols-outlined text-primary">event_upcoming</span>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg flex items-center justify-between hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<div>
+<h3 class="font-medium text-black dark:text-white">Project: Research Paper</h3>
+<p class="text-sm text-black/60 dark:text-white/60">Due: June 10, 2024</p>
+</div>
+<span class="material-symbols-outlined text-primary">event_upcoming</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-black dark:text-white mb-4">Pending Reviews</h2>
+<div class="space-y-4">
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg flex items-center justify-between hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<div>
+<h3 class="font-medium text-black dark:text-white">Review: Alex's Presentation</h3>
+<p class="text-sm text-black/60 dark:text-white/60">Review due: May 10, 2024</p>
+</div>
+<span class="material-symbols-outlined text-primary">rate_review</span>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg flex items-center justify-between hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<div>
+<h3 class="font-medium text-black dark:text-white">Review: Jordan's Essay</h3>
+<p class="text-sm text-black/60 dark:text-white/60">Review due: May 12, 2024</p>
+</div>
+<span class="material-symbols-outlined text-primary">rate_review</span>
+</div>
+</div>
+</section>
+</div>
+<section>
+<h2 class="text-2xl font-bold text-black dark:text-white mb-4">Announcements</h2>
+<div class="space-y-4">
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<h3 class="font-medium text-black dark:text-white">New Study Group Formed</h3>
+<p class="text-sm text-black/60 dark:text-white/60 mt-1">Posted: May 1, 2024</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<h3 class="font-medium text-black dark:text-white">Research Paper Guidelines Updated</h3>
+<p class="text-sm text-black/60 dark:text-white/60 mt-1">Posted: April 28, 2024</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark/50 p-4 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<h3 class="font-medium text-black dark:text-white">Library Hours Extended for Finals</h3>
+<p class="text-sm text-black/60 dark:text-white/60 mt-1">Posted: April 25, 2024</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

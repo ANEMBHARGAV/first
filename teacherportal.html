@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeerCollHub</title>
+  <style>
+    /* Reset and global styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b1120;
+      color: white;
+      text-align: center;
+      overflow-x: hidden; /* prevent horizontal scroll */
+    }
+
+    /* Navigation bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #0a0f1c;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box; /* include padding in width */
+    }
+
+    /* Logo and title */
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 45px;
+      width: 45px;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      font-size: 22px;
+      color: white;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    /* Navigation links */
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    ul li a:hover {
+      color: #2b6eff;
+    }
+
+    /* Buttons on navbar */
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .login {
+      background-color: #0d1b3d;
+      color: white;
+    }
+
+    .login:hover {
+      background-color: #162c64;
+    }
+
+    .register {
+      background-color: #0056ff;
+      color: white;
+    }
+
+    .register:hover {
+      background-color: #2b6eff;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 160px;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #2b6eff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #c5c5c5;
+      line-height: 1.6;
+    }
+
+    /* Hero buttons */
+    .hero button {
+      padding: 14px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .get-started {
+      background-color: #0056ff;
+      color: white;
+    }
+
+    .get-started:hover {
+      background-color: #2b6eff;
+      transform: scale(1.05);
+    }
+
+    .learn-more {
+      background-color: #19233a;
+      color: white;
+    }
+
+    .learn-more:hover {
+      background-color: #22314f;
+      transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 20px;
+      }
+
+      ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .buttons {
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .buttons button {
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="#">
+        <img src="Logo.jpg" alt="PeerCollHub Logo">
+      </a>
+      <h1>PeerCollHub</h1>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="buttons">
+      <button class="login">Login</button>
+      <button class="register">Register</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to <span>PeerCollHub!</span></h1>
+    <p>
+      Empowering students and teachers through collaborative projects,<br>
+      peer evaluation, and constructive feedback.
+    </p>
+    <button class="get-started">Get Started</button>
+    <button class="learn-more">Learn More</button>
+  </section>
+</body>
+</html>

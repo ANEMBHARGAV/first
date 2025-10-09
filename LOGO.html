@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeerCollHub - Educator Dashboard</title>
+  <style>
+    /* ========== GLOBAL STYLES ========== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b1120;
+      color: white;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========== NAVBAR ========== */
+    nav {
+      background-color: #0a0f1c;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 35px;
+      width: 35px;
+      border-radius: 8px;
+    }
+
+    .logo h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d1d5db;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #2b6eff;
+    }
+
+    .nav-profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-profile img {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+    }
+
+    .bell {
+      font-size: 20px;
+      color: #d1d5db;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .bell:hover {
+      color: #2b6eff;
+    }
+
+    /* ========== PROFILE HEADER ========== */
+    .profile-header {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .profile-header .avatar {
+      background-color: #19233a;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: #c5c5c5;
+    }
+
+    .profile-header h1 {
+      margin: 15px 0 5px 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .profile-header p {
+      color: #9ca3af;
+      font-size: 15px;
+      margin: 2px 0;
+    }
+
+    /* ========== TABS ========== */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      border-bottom: 1px solid #1f2937;
+      margin-top: 40px;
+      padding-bottom: 10px;
+    }
+
+    .tab {
+      color: #9ca3af;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .tab.active {
+      color: #2b6eff;
+    }
+
+    .tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #2b6eff;
+      border-radius: 2px;
+    }
+
+    /* ========== CONTENT SECTION ========== */
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      padding: 50px;
+    }
+
+    .left {
+      flex: 2;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #0f172a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* ========== ABOUT SECTION ========== */
+    .about {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .about h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .about p {
+      color: #c5c5c5;
+      line-height: 1.6;
+    }
+
+    /* ========== ASSIGNMENTS TABLE ========== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background-color: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1e293b;
+      color: #9ca3af;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #111827;
+    }
+
+    tr:hover {
+      background-color: #1e293b;
+    }
+
+    .status {
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .completed {
+      background-color: #065f46;
+      color: #a7f3d0;
+    }
+
+    .progress {
+      background-color: #78350f;
+      color: #fcd34d;
+    }
+
+    .upcoming {
+      background-color: #1e40af;
+      color: #93c5fd;
+    }
+
+    /* ========== COURSES TAUGHT ========== */
+    .right h3 {
+      margin-bottom: 20px;
+    }
+
+    .course {
+      background-color: #1e293b;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .course:hover {
+      background-color: #2b6eff33;
+    }
+
+    .course-icon {
+      background-color: #19233a;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      color: #9ca3af;
+      padding: 20px;
+      border-top: 1px solid #1f2937;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="Logo.jpg" alt="PeerCollHub Logo">
+      <h2>PeerCollHub</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">Assignments</a></li>
+      <li><a href="#">Students</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+    <div class="nav-profile">
+      <span class="bell">🔔</span>
+      <img src="profile.jpg" alt="Profile">
+    </div>
+  </nav>
+
+  <!-- PROFILE HEADER -->
+  <div class="profile-header">
+    <div class="avatar">👤</div>
+    <h1>Dhoni</h1>
+    <p>Educator</p>
+    <p>Joined in 2021</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active">Overview</div>
+    <div class="tab">Courses</div>
+    <div class="tab">Assignments</div>
+    <div class="tab">Students</div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <div class="about">
+        <h3>About</h3>
+        <p>
+          Experienced educator with a passion for fostering student growth and academic excellence. 
+          Dedicated to creating engaging learning environments and providing constructive feedback 
+          to support student success.
+        </p>
+      </div>
+
+      <div class="assignments">
+        <h3>Assignments Managed</h3>
+        <table>
+          <tr>
+            <th>Assignment</th>
+            <th>Course</th>
+            <th>Due Date</th>
+            <th>Status</th>
+          </tr>
+          <tr>
+            <td><strong>Project 1</strong></td>
+            <td>Mathematics 101</td>
+            <td>2024-05-15</td>
+            <td><span class="status completed">Completed</span></td>
+          </tr>
+          <tr>
+            <td><strong>Lab Report</strong></td>
+            <td>Physics 201</td>
+            <td>2024-05-20</td>
+            <td><span class="status progress">In Progress</span></td>
+          </tr>
+          <tr>
+            <td><strong>Final Exam</strong></td>
+            <td>Chemistry 301</td>
+            <td>2024-06-01</td>
+            <td><span class="status upcoming">Upcoming</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <h3>Courses Taught</h3>
+      <div class="course">
+        <div class="course-icon">📘</div>
+        <div>Mathematics 101</div>
+      </div>
+      <div class="course">
+        <div class="course-icon">🔬</div>
+        <div>Physics 201</div>
+      </div>
+      <div class="course">
+        <div class="course-icon">⚗</div>
+        <div>Chemistry 301</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 PeerCollHub — Empowering Collaborative Learning
+  </footer>
+</body>
+</html>
